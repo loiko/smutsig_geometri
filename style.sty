@@ -3,14 +3,17 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{hyperref}
 
 
 
 
 %%% General
 \newtheorem{theorem}{Sats}[section]
-\newtheorem{example}{Exempel}[section]
-\newtheorem{definition}{Definition}[section]
+\newtheorem{Exempel}{Exempel}[section]
+\newtheorem{Definition}{Definition}[section]
+\newtheorem{Uppgift}{Uppgift}[section]
 
 
 %%%% logic
@@ -81,3 +84,16 @@
 % Alex's line command
 \newcommand{\myLine}
 {\begin{center}\line(1,0){200}\end{center}}
+
+% short overline
+\newcommand{\ol}{\overline}
+
+% Alex's arrows
+\newcommand{\Llra}{\Longleftrightarrow}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\Lra}{\Longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\ua} {\uparrow}
+\newcommand{\da} {\downarrow}
