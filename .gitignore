@@ -1,0 +1,7 @@
+*sublime-workspace
+*.log
+*~
+*.aux
+*.out
+*.toc
+*.pyg

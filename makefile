@@ -1,19 +1,23 @@
-components = 
-imports = 
-target = smutsig-geometri
-pdfreader = see
+# components = 
+# imports = 
+# target = smutsig-geometri
 
-default: main
+LATEX_FLAGS := --shell-escape
+LATEX := pdflatex $(LATEX_FLAGS)
 
-main: main.tex $(components) $(imports)
-	pdflatex $<
-	pdflatex $<
-	pdflatex $<
-	mv $@.pdf $(target).pdf
-	make clean
+ALL_TEXT_STUFF := $(wildcard *.tex) $(wildcard *.sty)
+
+PDFS := kompendium.pdf barycentric_probs.pdf inversion_probs.pdf projective_probs.pdf poster.pdf
+
+default: kompendium.pdf 
+
+%.pdf: %.tex $(ALL_TEXT_STUFF)
+	$(LATEX) $<
+	$(LATEX) $<
+	$(LATEX) $<
+
 clean: 
-	rm *.log
-	rm *.aux
+	rm -f *.log *~ *.aux *.out *.toc *pyg
 
-open:
-	$(pdfreader) $(target).pdf &
+real_clean: clean
+	rm -f *pdf

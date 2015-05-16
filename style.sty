@@ -1,0 +1,51 @@
+
+%%% General
+\newtheorem{theorem}{Sats}[section]
+\newtheorem{example}{Exempel}[section]
+\newtheorem{definition}{Definition}[section]
+
+
+%%%% logic
+\newcommand{\langdef}[2]{\langle #1; #2 \rangle}
+\newcommand{\structdef}[3]{\langle #1; #2; #3 \rangle}
+\newcommand{\xvars}{x_1, ..., x_n}
+\newcommand{\vars}[2]{#1_1, ..., #1_{#2}}
+\newcommand{\lang}[1]{#1}
+\newcommand{\struct}[1]{#1}
+
+%%% sets
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+%% Functions
+\newcommand{\functo}{\rightarrow}
+
+
+% $\Gamma \models \phi \Rightarrow \Gamma \vdash \phi$
+
+%% Calculus
+\newcommand{\mat}[1]{#1}
+\newcommand{\vc}[1]{\overline{#1}}
+\newcommand{\ud}{\ \mathrm{d}}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\goesto}{\rightarrow}
+\newcommand{\Ordo}[1]{\mathcal{O}(#1)}
+\newcommand{\der}[2]{\frac{\ud #1}{\ud #2}}
+\newcommand{\dern}[3]{\frac{\ud^{#3} #1}{\ud #2^{#3}}}
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdern}[3]{\frac{\partial^{#3} #1}{\partial #2^{#3}}}
+
+%% Applications
+\newcommand{\unit}[1]{\mathrm{\ #1}}
+
+
+%% Linear algebra
+\newcommand{\norm}[1]{||#1||}
+\newcommand{\nrt}[2]{\sqrt[#1]{#2}}
+\newcommand{\inv}[1]{#1^{-1}}
+\newcommand{\colvec}[1]{\left(\begin{array}{c} #1 \end{array}\right)}
+\newcommand{\matr}[2]{\left(\begin{array}{#1} #2 \end{array}\right)}
+ % .. write #1 c's ??
