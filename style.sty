@@ -1,3 +1,11 @@
+\ProvidesPackage{style}
+\usepackage[swedish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+
+
 
 %%% General
 \newtheorem{theorem}{Sats}[section]
@@ -49,3 +57,27 @@
 \newcommand{\colvec}[1]{\left(\begin{array}{c} #1 \end{array}\right)}
 \newcommand{\matr}[2]{\left(\begin{array}{#1} #2 \end{array}\right)}
  % .. write #1 c's ??
+
+
+% Alex's input command
+\newcommand{\myInput}[1]
+{
+  \vspace{1cm}
+  \begin{center}
+    \textbf{File: #1}\\  
+    \line(1,0){350}
+  \end{center}
+  \input{#1}
+}
+
+
+% Alex's line command
+\newcommand{\smallLine}
+{\begin{center}
+    \line(1,0){100}
+  \end{center}
+}
+
+% Alex's line command
+\newcommand{\myLine}
+{\begin{center}\line(1,0){200}\end{center}}

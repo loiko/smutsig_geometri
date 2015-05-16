@@ -1,13 +1,9 @@
 \documentclass[10pt,a4paper]{article}
-\usepackage[swedish]{babel} 
-\usepackage[utf8]{inputenc}
-\author{Freddie Agestam} 
-\title{Antecktingar från ``Smutsig geometri''} 
-\date{\today} 
-
-\usepackage{amssymb}
-\usepackage{amsmath}
 \usepackage{style}
+
+\author{Alex Loiko, Freddie Agestam} 
+\title{Kompendium till ``Smutsig geometri''} 
+\date{Version ``just börjat'' från \today} 
 
 
 \begin{document}
@@ -111,96 +107,8 @@ Vad händer om cirkeln ligger innanför inversionscirkeln? Linjen hamnar utanfö
 
 Vad händer om cirkeln tangerar inversionscirkeln? Det blir en tangent till inversionscirkeln.
 
-\section{Barycentriska koordinater}
-Barus = tung, massiv
 
-
-\subsection{1-dimensionella barycentriska koordinater}
-Ett plan, 2 dimensioner, $\R^2 = \{ (x,y) | x \in \R, y \in R \}$.
-
-\begin{eqnarray*}
-O = (0, 0) \\
-A = (x_1, y_1) \\
-B = (x_2, y_2) \\
-\end{eqnarray*}
-
-
-De 1-dimensionella barycentriska koordinater relativt $A$, $B$ är tupler $(\alpha, \beta)$ med $\alpha, \beta \in \R$, $\alpha + \beta = 1$, som syftar på punkter $\alpha A + \beta B$.
-
-Varför hamnar alla sådana punkter på en linje? Vi tittar på ett exempel först.
-
-Ett exempel: punkten mellan dem.
-
-Vi \emph{definierar} en linje $AB$ som alla punkter $\{ A + \lambda (B - A) | \lambda \in \R \} \subseteq \R$.
-
-\subsubsection{Sats: Unik representation och entydighet}
-Varje punkt $P \in \overline{AB}$ har en unik $(\alpha, \beta)_{AB} = P$. Varje $(\alpha,\beta)_{AB} = P$ motsvarar unik $P \in \overline{AB}$.
-
-% Citat: Får vi inte *minus* B här?  Vi *borde* inte få det, vi borde få rätt sak.
-
-Uppgift: Givet $A,B$ och en punkt $P$ på en linje, samt avstånden från $P$ till $A$ resp $B$, hitta koordinaterna för $P$.
-
-Lösning: 
-\[ A + \frac{\lambda}{\mu + \lambda} (B - A) = \left( \frac{\mu}{\lambda + \mu}, \frac{\lambda}{\lambda + \mu} \right)_{AB} \]
-
-\subsubsection{Sats: Koordinater oberoende av origo}
-
-\begin{eqnarray*}
-& \text{Låt } & O' = O + \delta = O + (\delta_x, \delta_y) \\
-&& A' = A + \delta \\
-&& B' = B + \delta \\
-& \text{Låt } & P = (\alpha, \beta)_{AB} \\
-&& P' = P - \delta \\
-& \text{Då är } & P' = (\alpha, \beta)_{A',B'} 
-\end{eqnarray*}
-
-\subsection{2-dimensionella barycentriska koordinater}
-Ett plan, 2 dimensioner, $\R^2 = \{ (x,y) | x \in \R, y \in R \}$.
-
-\begin{eqnarray*}
-O = (0, 0) \\
-A = (x_1, y_1) \\
-B = (x_2, y_2) \\
-C = (x_3, y_3) \\
-\end{eqnarray*}
-$A, B, C$ är inte på samma linje.
-
-De 2-dimensionella barycentriska koordinaterna relativt $A$, $B$, $C$ är tupler $(\alpha, \beta, \gamma)$ med $\alpha, \beta, \gamma \in \R$, $\alpha + \beta + \gamma = 1$, som syftar på punkter $\alpha A + \beta B + \gamma C$.
-
-\subsubsection{Sats: Unik representation och entydighet}
-Varje punkt $P \in \R^2$ har en unik $(\alpha, \beta, \gamma)_{ABC} = P$. Varje $(\alpha,\beta,\gamma)_{ABC} = P$ motsvarar unik $P$.
-
-Uppgift: Givet $A,B$ och en punkt $P$ på en linje, samt avstånden från $P$ till $A$ resp $B$, hitta koordinaterna för $P$.
-
-
-\subsubsection{Sats: Oberoende av origo}
-Formulera och bevisa satsen själva.
-
-\subsubsection{Användning: Medianernas skärningspunkt}
-Medianerna i en triangel skärs i en punkt i förhållandet $1:2$.
-
-TODO, finns bilder
-
-\subsubsection{Cevas sats}
-Triangel $ABC$. Givet punkt $P$ i triangeln, bestäm var punkten från $A$ genom $P$ skär motstående sida, dvs skärningspunkt $AP \cap BC$.
-
-Bevis (finns bild): kalla den sökta punkten $Q = (O, \alpha, 1-\alpha)_{ABC}$. Då får vi linjen 
-\begin{eqnarray*}
-& \overline{AP} =& \beta (1, 0, 0) + (1, \beta)(l,m,n) \\
-&& (\beta (
-\end{eqnarray*}
-
-Resten av beviset är rätt långt. Se foton.
-
-Satsen lyder...
-$A,B,C$ ligger ej på linje. Tag 
-\begin{eqnarray*}
-A' \in \overline{BC} \\
-B' \in \overline{AC} \\
-C' \in \overline{AB}
-\end{eqnarray*}
-Då gäller att linjerna skärs i en punkt $P$ omm
-\[ \frac{AB'}{B'C} \frac{CA'}{A'B} \frac{BC'}{C'A} = 1 \]
+\myInput{barycentrisk-kompendium.tex}
 
 
 \section{Projektiv geometri}
