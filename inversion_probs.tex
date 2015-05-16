@@ -1,0 +1,47 @@
+\input{template.tex}
+
+	
+\begin{document}
+\begin{enumerate}
+
+\item \textbf{Egenskaper av inversion} Beskriv vad som händer när en triangel inverseras i \begin{enumerate}
+	\item dess incirkel\footnote{Den inskrivna cirkeln som tangerar alla tre sidorna}
+	\item dess omcirkel\footnote{Den omskrivna cirkeln, dvs den cirkel som går genom de tre hörnen}
+	\end{enumerate}
+
+\item \textbf{Egenskaper av inversion} $P,Q$ är godtyckliga punkter. $O$ är centrum för en cirkel $\omega$ med radie $r$. Låt $P',Q'$ vara 
+	de inverterade avbildningarna av $P,Q$. Finn avståndet $|PQ|$ uttryckt i $r, |OP|, |OQ|, |PQ|$.
+
+\item \textbf{USAMO, lite förenklat} En fyrhörning $ABCD$ har $AC \perp BD$\footnote{vinkeln mellan $AC$ och $BD$ är $90^\circ$}. Låt 
+	$E=AC\cap BD$\footnote{skärningspunkten}. Låt $P,Q,R,S$ vara projektionerna av $E$ på sidorna $AB, BC, CD, AD$.\footnote{D.v.s. 
+	dra en höjd ner från $E$ till varje sida och låt $P,Q,R,S$ vara skärningspunkter mellan sidorna och höjderna}.
+	Visa att $PQRS$ är cyklisk.
+
+\item \textbf{Steiners porism}
+	Två cirklar $\Gamma_1, \Gamma_2$ och ett tal $n$ 
+	är sådana att de inte skär varandra, att $\Gamma_1$ ligger inuti $\Gamma_2$ och 
+	att det finns $n$ cirklar $C_1, C_2, \ldots C_n$ med 
+	\begin{itemize}
+	\item $C_1$ tangerar $C_{n}, C_{2}, \Gamma_1, \Gamma_2$
+	\item $C_2$ tangerar $C_{1}, C_{3}, \Gamma_1, \Gamma_2$
+	\item $\ldots \ \vdots \ \ldots\ \vdots\ \ldots$
+	\item $C_n$ tangerar $C_{n-1}, C_{1}, \Gamma_1, \Gamma_2$
+	\end{itemize}
+
+	\smallLine
+
+	Låt $\omega_1$ vara en ny cirkel (inte ev an $C_1,\ldots, C_n$) som tangerar $\Gamma_1, \Gamma_2$.
+	Konstruera $\omega_2$ så att den tangerar $\omega_1, \Gamma_1, \Gamma_2$ (det går alltid).
+	Fortsätt med att konstruera $\omega_3$ mellan $\omega_2, \Gamma_1, \Gamma_2$.
+	Visa att när du kommer till $\omega_n$, så kommer den \textbf{alltid} att tangera $\omega_1$, oavsett var den började.
+	D.v.s. att man kan ta de $n$ cirklarna $C_1,\ldots,C_n$ och låta dem glida runt kontinuerligt mellan $\Gamma_1, \Gamma_2$.
+
+	\smallLine
+	Använd följande påstående utan bevis:
+	\textit{
+	Om $\Gamma_1, \Gamma_2$ är två cirklar som inte skär varandra, så finns det en annan cirkel och en inversion i den
+	som avbildar $\Gamma_1, \Gamma_2$ på två koncentriska\footnote{Två cirklar runt samma centrum} cirklar.
+	}
+
+\end{enumerate}
+\end{document}

@@ -1,0 +1,215 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[swedish]{babel} 
+\usepackage[utf8]{inputenc}
+\author{Freddie Agestam} 
+\title{Antecktingar från ``Smutsig geometri''} 
+\date{\today} 
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{style}
+
+
+\begin{document}
+
+%\newcommand{\abs}[1]{|#1|}
+%\newcommand{\functo}{\rightarrow}
+
+
+\maketitle
+
+\section{Inversion}
+En matematisk avbildning som vänder ett plan ut och in.
+
+Givet en cirkel med centrum $O$ och radien $r$ på planet $\Pi$, definiera en transformation $f$:
+
+\[ f: \Pi \setminus \{ 0 \} \functo \Pi \setminus \{ 0 \} \]
+där $P \in \Pi \setminus \{ 0 \}$ avbildas på $P'$,
+
+så att $P'$ är på andra sidan cirkeln och $\abs{OP} \abs{OP'} = r^2$.
+
+\subsection{Konstruktioner med passare och linjal}
+Konstruktioner i planet med cirklar, linjer, punkter. Tillåtna operationer:
+
+\begin{itemize}
+\item Rita cirkel: givet punkter $A,B,O$, konstruera en cirkel med centrum i $O$ och radie längden av $AB$.
+\item Hitta skärningspunkter
+\item Dra linje genom två punkter
+\end{itemize}
+%(hänvisar till postulat 1--3)
+
+\subsubsection{Exempel: flytta en vinkel}
+Målet är att flytta vinkeln mellan $l_1,l_2$ till punkten $P$ på linjen $l_3$.
+
+%Låt $A$ vara skärningspunkten mellan $l_1,l_2$.
+%En cirkel $\omega_1$ dras med centrum i $A$ som går genom $P$. Detta bildar punkten $Q$ på linjen $l_3$.
+
+Det ingår lite handviftning när skärningspunkt väljs: det finns ofta två skärningspunkter och vi väljer den som passar.
+
+\begin{eqnarray*}
+A = l_1 \cap l_3 \\
+\omega_1 = cirkel(A, \abs{AP}) \\
+\omega_2 = cirkel(B, \abs{AP}) \\
+B = \omega_1 \cap l_1 \\
+C = \omega_1 \cap l_2 \\
+Q = \omega_2 \cap l_3 \\
+\omega_3 = cirkel(Q, \abs{BC}) \\
+R = \omega_2 \cap \omega_1 \\
+l_4 = linje(P,R)
+\end{eqnarray*}
+
+\subsubsection{Uppgift: konstruera inversionen av punkten $P$}
+Skriv om förhållandet $\abs{OP} \abs{OP'} = r^2$ till $\frac{\abs{OP'}}{r} = \frac{r}{\abs{OP}}$. Det kan tolkas som en likformighet.
+
+Välj en punkt $A$ på cirkeln (inte på linjen genom $P$)\footnote{Kan konstrueras t.ex. genom att $P$ är centrum och radien $OP$}. Avståndet $AO$ är då $r$. 
+
+Flytta sedan vinkeln $OPA$ till linjen $OA$. Bilda så vinkeln $P'$ på linjen $OP$.
+
+Med lite algebra kan man visa att det är en korrekt punkt. Triangeln $OAP'$ är då likformig med $OPA$, då de har två gemensama vinklar. Förhållandet följer då från denna likformighet.
+
+\subsection{Lemma: Inversion vänder på vinklar}
+Låt $P$, $Q$ vara två punkter som inte ligger på linje med $O$. Antag att $P$ ligger innanför och $Q$ utanför. 
+
+Det gäller att $\abs{OP}\abs{OP'} = \abs{OQ} \abs{OQ'}$.
+
+Skriv om detta som ett triangelförhållande, så får man två kongruenta trianglar.
+%% \begin{eqnarray*}
+%% \frac{}
+%% \end{eqnarray*}
+
+\subsection{Cirklar avbildas på cirklar}
+
+\subsubsection{Sats}
+Låt $\Gamma$ vara en cirkel med centrum $O$. Punkterna $A,B,C,D$ ligger på samma cirkel som ej går genom $O$. Då kommer deras avbildningar $A',B',C',D'$ också ligga på samma cirkel.
+
+%% TODO: visades detta?
+
+\subsubsection{Korollarium}
+Cirklar ej genom $O$ avbildas på cirklar ej genom $O$.
+
+Bevis: Låt $\Omega$ vara en cirkel ej genom $O$. 
+Låt $A,B,C$ vara olika punkter på dessa.
+Beteckna med $\Omega'$ cirkeln genom $A',B',C'$.
+
+Om $D$ är en punkt på $\Omega$, kommer $D'$ ligga på samma cirkel som $A',B',C'$ enligt tidigare sats. Men cirkeln genom tre punkter är unik, alltså $D' \in \Omega$.
+
+Alltså avbildas $\Omega$ på $\Omega'$. Appliceras avbildningen en gång till ser man att endast punkter på $\Omega$ avbildas på $\Omega'$. 
+
+Detaljer lämnas åt läsaren av det oskrivna kompendiet.
+
+\subsection{Försök till bevis av satsen}
+Begravdes.
+
+\subsection{Cirklar genom origo går på linjer}
+Bevis: Cirklar går på linjer. Detta för att linjer går på cirklar. Detta för att cirklar går på linjer. Det är ett cirkelbevis. -- Nicole
+
+Bevisidé:
+Låt en cirkel närma sig origo. Denna kommer bli allt större och övergår i en oändlig cirkel -- en linje -- vid inversionen.
+
+\subsubsection{Lemma}
+Vad händer om cirkeln ligger innanför inversionscirkeln? Linjen hamnar utanför inversionscirkeln.
+
+Vad händer om cirkeln tangerar inversionscirkeln? Det blir en tangent till inversionscirkeln.
+
+\section{Barycentriska koordinater}
+Barus = tung, massiv
+
+
+\subsection{1-dimensionella barycentriska koordinater}
+Ett plan, 2 dimensioner, $\R^2 = \{ (x,y) | x \in \R, y \in R \}$.
+
+\begin{eqnarray*}
+O = (0, 0) \\
+A = (x_1, y_1) \\
+B = (x_2, y_2) \\
+\end{eqnarray*}
+
+
+De 1-dimensionella barycentriska koordinater relativt $A$, $B$ är tupler $(\alpha, \beta)$ med $\alpha, \beta \in \R$, $\alpha + \beta = 1$, som syftar på punkter $\alpha A + \beta B$.
+
+Varför hamnar alla sådana punkter på en linje? Vi tittar på ett exempel först.
+
+Ett exempel: punkten mellan dem.
+
+Vi \emph{definierar} en linje $AB$ som alla punkter $\{ A + \lambda (B - A) | \lambda \in \R \} \subseteq \R$.
+
+\subsubsection{Sats: Unik representation och entydighet}
+Varje punkt $P \in \overline{AB}$ har en unik $(\alpha, \beta)_{AB} = P$. Varje $(\alpha,\beta)_{AB} = P$ motsvarar unik $P \in \overline{AB}$.
+
+% Citat: Får vi inte *minus* B här?  Vi *borde* inte få det, vi borde få rätt sak.
+
+Uppgift: Givet $A,B$ och en punkt $P$ på en linje, samt avstånden från $P$ till $A$ resp $B$, hitta koordinaterna för $P$.
+
+Lösning: 
+\[ A + \frac{\lambda}{\mu + \lambda} (B - A) = \left( \frac{\mu}{\lambda + \mu}, \frac{\lambda}{\lambda + \mu} \right)_{AB} \]
+
+\subsubsection{Sats: Koordinater oberoende av origo}
+
+\begin{eqnarray*}
+& \text{Låt } & O' = O + \delta = O + (\delta_x, \delta_y) \\
+&& A' = A + \delta \\
+&& B' = B + \delta \\
+& \text{Låt } & P = (\alpha, \beta)_{AB} \\
+&& P' = P - \delta \\
+& \text{Då är } & P' = (\alpha, \beta)_{A',B'} 
+\end{eqnarray*}
+
+\subsection{2-dimensionella barycentriska koordinater}
+Ett plan, 2 dimensioner, $\R^2 = \{ (x,y) | x \in \R, y \in R \}$.
+
+\begin{eqnarray*}
+O = (0, 0) \\
+A = (x_1, y_1) \\
+B = (x_2, y_2) \\
+C = (x_3, y_3) \\
+\end{eqnarray*}
+$A, B, C$ är inte på samma linje.
+
+De 2-dimensionella barycentriska koordinaterna relativt $A$, $B$, $C$ är tupler $(\alpha, \beta, \gamma)$ med $\alpha, \beta, \gamma \in \R$, $\alpha + \beta + \gamma = 1$, som syftar på punkter $\alpha A + \beta B + \gamma C$.
+
+\subsubsection{Sats: Unik representation och entydighet}
+Varje punkt $P \in \R^2$ har en unik $(\alpha, \beta, \gamma)_{ABC} = P$. Varje $(\alpha,\beta,\gamma)_{ABC} = P$ motsvarar unik $P$.
+
+Uppgift: Givet $A,B$ och en punkt $P$ på en linje, samt avstånden från $P$ till $A$ resp $B$, hitta koordinaterna för $P$.
+
+
+\subsubsection{Sats: Oberoende av origo}
+Formulera och bevisa satsen själva.
+
+\subsubsection{Användning: Medianernas skärningspunkt}
+Medianerna i en triangel skärs i en punkt i förhållandet $1:2$.
+
+TODO, finns bilder
+
+\subsubsection{Cevas sats}
+Triangel $ABC$. Givet punkt $P$ i triangeln, bestäm var punkten från $A$ genom $P$ skär motstående sida, dvs skärningspunkt $AP \cap BC$.
+
+Bevis (finns bild): kalla den sökta punkten $Q = (O, \alpha, 1-\alpha)_{ABC}$. Då får vi linjen 
+\begin{eqnarray*}
+& \overline{AP} =& \beta (1, 0, 0) + (1, \beta)(l,m,n) \\
+&& (\beta (
+\end{eqnarray*}
+
+Resten av beviset är rätt långt. Se foton.
+
+Satsen lyder...
+$A,B,C$ ligger ej på linje. Tag 
+\begin{eqnarray*}
+A' \in \overline{BC} \\
+B' \in \overline{AC} \\
+C' \in \overline{AB}
+\end{eqnarray*}
+Då gäller att linjerna skärs i en punkt $P$ omm
+\[ \frac{AB'}{B'C} \frac{CA'}{A'B} \frac{BC'}{C'A} = 1 \]
+
+
+\section{Projektiv geometri}
+$x,y,z \in \R$, sådana att $(x,y,z) \neq (0,0,0)$.
+Låt $[ x : y : z ] = \{ \lambda (x,y,z) | \lambda \in \R \}$.
+
+% --------------------
+
+En punkt $(x,y,-1) \in \Pi$ motsvarar exakt en linje $[ x : y : -1]$. En linje $[x:y:0]$
+
+\end{document}
+

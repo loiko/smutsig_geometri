@@ -1,0 +1,86 @@
+\input{template.tex}
+
+	
+\begin{document}
+\section*{Barycentriska koordinater}
+\begin{enumerate}
+
+
+\item\textbf{Egenskaper hos barycentriska koordinater}.
+	Sidorna av en (icke-degenererad) triangel $ABC$ delar in planet i $7$ delar.
+	I insidan av triangeln har varje punkt $3$ positiva koordinater ($(+,+,+)$). På
+	linjen $BC$ mellan $B$ och $C$ är koordinaterna $(0, +, +)$. För varje återstående område: beskriv tecknen på koordinaterna. Varje koordinat är $\in \{+,-,0\}$.
+
+\item \textbf{Unika koordinater}.
+$A,B,C$ är tre olika punkter som inte ligger på samma linje (ej kolinjära).
+Visa att de barycentriska koordinaterna relativt $A,B,C$ är unika: varje koordinat
+motsvarar en unik punkt, och varje punkt har en unik koordinat.
+{\tiny{
+        Bevisa det här först: Om $\alpha A + \beta B + \gamma C = 0$ med $\alpha + \beta + \gamma = 1$, så ligger
+        $A, B, C$ på en linje. } }
+
+\item \textbf{Oberoende av origo}. Visa att de barycentriska koordinaterna 
+	baserade på en triangel $A,B,C$ i $2$ dimensioner är oberoende av valet på origo.
+	(Analogt med det $1$-dimensionella fallet).
+
+        
+
+\item \textbf{Linjer genom samma punkt}. 
+	I en triangel $ABC$ med är punkterna $D \in BC$, $E \in AC$, $F \in AB$ sådana att
+	$AD, BE, CF$ skär varandra i en punkt $P$. Låt $D'$ vara speglingen av $D$ i mittpunkten av $BC$,
+	$E'$ - speglingen av $E$ i mittpunkten av $AC$ och analogt för $F'$. Visa att 
+	de tre nya linjerna $AE', BE', CF'$ skär varandra i en punkt $P'$. Hitta de barycentriska 
+	koordinaterna för $P'$ om $P = (n, m, l)$.
+	
+
+\item \textbf{Trigonometriska Ceva}. I en triangel $ABC$ ligger punkterna
+	$D$ på $BC$, $E$ på $AC$, $F$ på $AB$. Visa att $AD, BE, CF$ skär varandra
+	i samma punkt om och endast om 
+	\[
+	\frac{\sin \angle BAD \sin \angle ACF \sin \angle CBE}
+	     {\sin \angle DAC \sin \angle FCB \sin \angle EBA}
+	\]
+	%\textit{Hint: Sök på \textit{Ceva's theorem}}
+
+\item \textbf{Linjer genom samma punkt}. 
+	I en triangel $ABC$ med är punkterna $D \in BC$, $E \in AC$, $F \in AB$ sådana att
+	$AD, BE, CF$ skär varandra i en punkt $P$. Låt $AA', BB', CC'$ vara bisektriserna 
+	dragna ur $A, B, C$. Låt linjen $a$ vara speglingen av $AD$ i linjen $AA'$, $b$ och $c$ analogt.
+	Visa att de tre linjerna $a,b,c$ skär varandra i en punkt. \textit{(Svårt)} Vad är koordinaterna av den
+	punkten uttryckt i $P$? 
+
+	{\tiny{Om du kör fast - sök på \textit{isogonal conjugate}}}.
+
+\item Härled koordinaterna för ditt favorit-triangelcentrum. Om du inte har något: 
+	gå in på \textsc{Encyclopedia of Triangle Centers} \url{http://faculty.evansville.edu/ck6/encyclopedia/ETC.html}
+	och skaffa en! Bonuspoäng om du behöver använda ett datoralgebra-system och koordinaterna inte får
+	plats på pappret.
+        
+        Min favorit är \textit{Fermat-Torricelli}-punkten vars koordinater är 
+        \begin{eqnarray*}
+        \left(-\frac{a^4+a^2 \left(b^2+c^2+4 \sqrt{3} S\right)-2 \left(b^2-c^2\right)^2}{3 a^4-2 a^2 \left(3 b^2+3 c^2+2 \sqrt{3} S\right)+3 b^4-2 b^2 \left(3 c^2+2 \sqrt{3} S\right)+3 c^4-4 \sqrt{3} c^2 S},\right.\\
+        -\frac{-2 a^4+a^2 \left(b^2+4 c^2\right)+b^4+b^2 \left(c^2+4 \sqrt{3} S\right)-2 c^4}{3 a^4-2 a^2 \left(3 b^2+3 c^2+2 \sqrt{3} S\right)+3 b^4-2 b^2 \left(3 c^2+2 \sqrt{3} S\right)+3 c^4-4 \sqrt{3} c^2 S},\\
+        \left.-\frac{-2 a^4+a^2 \left(4 b^2+c^2\right)-2 b^4+b^2 c^2+c^4+4 \sqrt{3} c^2 S}{3 a^4-2 a^2 \left(3 b^2+3 c^2+2 \sqrt{3} S\right)+3 b^4-2 b^2 \left(3 c^2+2 \sqrt{3} S\right)+3 c^4-4 \sqrt{3} c^2 S}\right)
+        \end{eqnarray*}
+
+
+
+\end{enumerate}
+
+%% \section{Projektiv geometri}.
+%% \item\textbf{Projektiv cirkel}.
+%% 	Härled ekvationen för en cirkel i det projektiva planet. Alltså vilket samband måste $(\alpha, \beta, \gamma)$ i 
+%% 	$[\alpha : \beta : \gamma]$ uppfylla för att ligga på en given cirkel?
+
+%% \item\textbf{Dubbelförhållande}.
+%% 	Låt $A,B,C,D$ vara $4$ olika punkter på en linje. Då är 
+%% 	\[
+%% 	\frac{AC \cdot BD}
+%% 	{AD \cdot BC}
+%% 	\]
+%% 	punkternas dubbelförhållande. Visa \textit{(ganska krångligt)} att dubbelförhållande bevaras under projektiva transformationer
+%% 	förutsatt att ingen punkt av $A,B,C,D$ skickas på oändligheten.
+
+%% \item\textbf{Desargues sats}. Visa omvändningen till Desargues sats.
+
+\end{document}

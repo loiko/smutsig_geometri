@@ -1,0 +1,185 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[swedish]{babel}
+\usepackage[colorlinks]{hyperref}
+\usepackage{url}
+%\usepackage{qtree}
+\usepackage{color}
+\usepackage{todonotes}
+
+% commutative diagrams
+\usepackage[all,cmtip]{xy}
+%\usepackage{alg}
+
+%\usepackage{youngtab}
+
+% Add this one at the last possible moment,
+% don't forget -shell-escape (one '-'),
+% never use anything non-ascii
+% and just delete everything and start again
+% if you get strange errors.
+% Oh, and did I mention, you have to have python
+% and pygments installed!
+% On the other hand, the results are worth it!
+% \usepackage{texments}
+% \usestyle{default}
+
+\usepackage{breqn}
+
+\newtheorem{Theorem}{Theorem}
+\newtheorem{Uppgift}{Uppgift}
+\newtheorem{Lemma}{Lemma}
+\newtheorem{Lösning}{Lösning}
+\newtheorem{Solution}{Solution}
+\newtheorem{Definition}{Definition}
+\newtheorem{Example}{Example}
+\newtheorem{Sats}{Sats}
+\newtheorem{Exempel}{Exempel}
+\newtheorem{Proposition}{Proposition}
+\newtheorem{Corollary}{Corollary}
+\newtheorem{Exercise}{Exercise}
+\newtheorem{Claim}{Claim}
+
+\newcommand{\bigRedBox}[1]
+{
+  \fbox{
+    \parbox{300px}{
+      \color{red}
+      #1
+    }
+  }
+}
+
+\newcommand{\redBox}[1]
+{
+  \fbox{
+    \color{red}
+    #1
+  }
+}
+
+
+\newcommand{\smallLine}
+{\begin{center}
+    \line(1,0){100}
+  \end{center}
+}
+\newcommand{\myLine}
+{\begin{center}\line(1,0){200}\end{center}}
+
+\newcommand{\myInput}[1]
+{
+  \vspace{1cm}
+  \begin{center}
+    \textbf{File: #1}\\  
+    \line(1,0){350}
+  \end{center}
+  \input{#1}
+}
+
+%\newcommand{\dd}{\text{d}}
+\newcommand{\Lla}{\Longleftarrow}
+%\newcommand{\llra}{\longleftrightarrow}
+%\newcommand{\lra}{\longrightarrow}
+%\newcommand{\Lra}{\Longrightarrow}
+
+
+%\addtolength{\textwidth}{1in}
+%\addtolength{\hoffset}{-0.5in}
+%\addtolength{\textheight}{1in}
+%\addtolength{\voffset}{-1in}
+
+\newcommand{\twoMat}[4]{
+  \ensuremath{
+    \left(
+      \begin{array}{cc}
+        #1 & #2\\
+        #3 & #4
+      \end{array}
+    \right)
+  }
+}
+
+\newcommand{\Spec}{\operatorname{Spec}}
+
+\newcommand{\hugeslant}[2]{{\raisebox{.3em}{$#1$}\Big/\raisebox{-.3em}{$#2$}}}
+
+  \newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+\newcommand{\smallslant}[2]{{\raisebox{.1em}{$#1$}\left/\raisebox{-.1em}{$#2$}\right.}}
+
+\newcommand{\hugediv}[2]{{\raisebox{.3em}{$#1$}\Big|\raisebox{-.3em}{$#2$}}}
+
+% REMEMBER: \equiv - the mod congruence sing
+% \cong - the triangle congruence sign
+
+\newcommand{\dd}{\text{d}}
+\newcommand{\Llra}{\Longleftrightarrow}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\Lra}{\Longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\ua} {\uparrow}
+\newcommand{\da} {\downarrow}
+
+\newcommand{\dydx}{\frac{\dd y}{\dd x}}
+\newcommand{\ddx}{\frac{\dd }{\dd x}}
+
+\newcommand{\lap}[1]{\ensuremath\left( \mathcal{L} \left[#1\right]\right)}
+\newcommand{\InvLap}[1]{\ensuremath\left( \mathcal{L}^{-1} \left[#1\right]\right)}
+
+\newcommand{\vech}[2]{\ensuremath\left(\begin{array}{c}#1\\#2\end{array}\right)}
+\newcommand{\vechhh}[3]{\ensuremath\left(\begin{array}{c}#1\\#2\\#3\end{array}\right)}
+\newcommand{\twotwomat}[4]{\ensuremath\left(\begin{array}{cc}#1& #2\\#3 & #4\end{array}\right)}
+
+\newcommand{\dbar}[1]{\ensuremath\dot{\bar{#1}}}
+\newcommand{\Ree}[1]{\ensuremath \operatorname{Re}#1}
+
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\sign}{\operatorname{sign}}
+
+% bilinear form, <.|.>
+\newcommand{\bFormA}[2]{\ensuremath\left\langle #1 \Big| #2 \right\rangle}
+\newcommand{\smallBFormA}[2]{\ensuremath\left\langle #1 | #2 \right\rangle}
+
+% bilinear form, [.|.]
+\newcommand{\bFormB}[2]{\ensuremath\left[ #1 \Big| #2 \right]}
+
+\newcommand{\Imm}{\ensuremath\operatorname{Im}}
+
+\newcommand{\id}{\ensuremath\operatorname{Id}}
+%\newcommand{\ker}{\ensuremath\operatorname{ker}}
+
+\newcommand{\Sym}{\ensuremath\operatorname{Sym}}
+\newcommand{\ol}{\overline}
+
+\newcommand{\mbf}[1]{\boldsymbol{#1}}
+
+\newcommand{\tagg} {\fbox{\fbox{\Large{\textbf{{\color{red}A}{\color{yellow}l}{\color{green}e}{\color{blue}x}}}}}}
+
+\newcommand{\lege}[1]{\ensuremath\left\langle#1\right\rangle}
+
+\newcommand{\abs} [1] {\ensuremath \left|#1\right|}
+
+%\newcommand{\hat} [1] {\text{\^{$#1$}}}
+
+
+%     Freddie mekanik:
+\newcommand{\tder}[1]{\frac{\text{d}#1}{\text{d}t}}
+\newcommand{\ud}{\mathrm{d}} % för integraler
+\newcommand{\vc}[1]{\overline{\boldsymbol{#1}}}
+\newcommand{\ttder}[1]{\frac{\text{d}^2#1}{\text{d}t^2}} % andra tidsderivatan
+\newcommand{\dtder}[1]{\dot{#1}}
+
+
+% Alex mekanik:
+\newcommand{\uvc} [1] {\ensuremath\widehat{\vc{#1}}} % unit vector
+
+\newcommand{\floor} [1] {\left\lfloor #1 \right\rfloor}
+
+\newcommand{\legendre} [2] {\left(\frac{#1} {#2}\right)}

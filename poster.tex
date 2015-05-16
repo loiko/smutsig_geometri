@@ -1,0 +1,71 @@
+\input{template.tex}
+
+\title{Smutsig geometri}
+\author{Alex Loiko}
+
+\begin{document}
+
+\maketitle
+
+\section{Vad?}
+\textit{Syntetisk geometri}, vilket betyder den geometri som grekerna höll på med,
+brukar på engelska kallas för \textit{pure}. Men sedan de antika grekerna 
+har man uppfunnit
+algebra, trigonometri, koordinater, vektorer, komplexa tal och en massa annat som 
+gör svåra geometriproblem möjliga att lösa även för oss som inte har 
+läst alla 13 volymer av Elementa. Det är dessa metoder jag vill fokusera på.
+
+Det blir ungefär följande ämnen i ungefär den här ordningen:
+\begin{description}
+\item[Inversion] en transformation som vänder planet ut och in runt en cirkel.
+    Kan användas för att göra om komplicerade cirklar till enkla raka linjer.
+
+\item[Projektiv geometri] %\todo{TODO: describe!}
+
+\item[Koordinatgeometri och vektorer] 
+
+\item[Barycentriska koordinater] - ett alternativt koordinatsystem för planet 
+som använder $3$ koordinater givet $3$ startpunkter $A, B, C$. Till exempel
+kommer $A$ bli $(1, 0, 0)$, $B$ är $(0, 1, 0)$ och 
+den punkt $F$ som minimerar $|AF|+|BF|+|CF|$ är
+\begin{eqnarray*}
+\left(-\frac{a^4+a^2 \left(b^2+c^2+4 \sqrt{3} S\right)-2 \left(b^2-c^2\right)^2}{3 a^4-2 a^2 \left(3 b^2+3 c^2+2 \sqrt{3} S\right)+3 b^4-2 b^2 \left(3 c^2+2 \sqrt{3} S\right)+3 c^4-4 \sqrt{3} c^2 S},\right.\\
+-\frac{-2 a^4+a^2 \left(b^2+4 c^2\right)+b^4+b^2 \left(c^2+4 \sqrt{3} S\right)-2 c^4}{3 a^4-2 a^2 \left(3 b^2+3 c^2+2 \sqrt{3} S\right)+3 b^4-2 b^2 \left(3 c^2+2 \sqrt{3} S\right)+3 c^4-4 \sqrt{3} c^2 S},\\
+\left.-\frac{-2 a^4+a^2 \left(4 b^2+c^2\right)-2 b^4+b^2 c^2+c^4+4 \sqrt{3} c^2 S}{3 a^4-2 a^2 \left(3 b^2+3 c^2+2 \sqrt{3} S\right)+3 b^4-2 b^2 \left(3 c^2+2 \sqrt{3} S\right)+3 c^4-4 \sqrt{3} c^2 S}\right)
+\end{eqnarray*}
+\end{description}
+där $S$ är triangelns area, $a,b,c$ - sidlängerna $|BC|, |AC|, |AB|$ respektive.
+
+\section{För vem?}
+För alla intresserade så klart! Rekommenderade förkunskaper:
+ 
+\begin{description}
+\item[Inversion]: Likformiga trianglar och vinklar.
+
+\item[Projektiv geometri]: här blir det också från grunden.
+
+\item[Koordinater och vektorer]: Säkra källor säger att de som har gått ett halvt år i ettan
+    kan tillräckligt.
+%\todo{Osäker på vad ni kan och vad jag vill göra;
+%    har inte kommit dit i planerandet än}.
+
+\item[Barycentriska koordinater]: Lite trigonometri och ett hum om vektorer.
+
+\end{description}
+\section{När, var och hur mycket?}
+    Att meddelas, att bestämmas och upp till ett par timmar för varje delämne.
+    Jag har en del lediga eftermiddagar och en del lediga helger. Det finns möjlighet att hålla det på SU eller KTH,
+    annars har jag inget emot att åka in till Dagy.
+
+\section{Läxor och kursmaterial}
+    Jag tänker dela ut frivilliga övningsuppgifter. Jag hämtar material från
+    \begin{description}
+    \item[Geometry Unbound] av Kiran Kedlaya, \url{http://kskedlaya.org/geometryunbound/}
+    \item[Geometry Revisited] av Coxeter och Greitzer. Det kan cirkulera en fil 
+    av tvivelaktig laglighet på nätet. Jag tar med en döda-träd-verision till dem som
+    är intresserade.
+    \item[Ännu oskrivna lektionsanteckningar] av mig.
+    \end{description}
+
+\end{document}
+
