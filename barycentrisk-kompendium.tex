@@ -1,0 +1,398 @@
+
+\section{Barycentriska koordinater}
+\label{sec:bary-intro}
+Barycentriska koordinater är ett koordinatsystem för linjer, plan, rum o.s.v. som med fördel kan användas
+för problem med trianglar. Vi kommer i detta kapitel gå igenom teorin för barycentriska koordinater
+för linjer och plan.
+
+Generellt kan barycentriska koordinater användas i $n$-dimensionella rum.
+Då behövs $n+1$ punkter för att ge en bas till koordinatsystemet.
+(alltså en triangel för ett plan och två punkter för en linje).
+Denna bas av $n+1$ punkter får inte ingå i samma sidoklass av ett $n-1$-dimensionellt delrum
+av det $n$-dimensionella rummet.
+
+Efter valet av bas, kommer varje punkt få unika koordinater.
+Vi visar exempel och härleder teorin för linjer och plan.
+
+
+Ordet \textit{barycentrisk} kommer fån 
+    grekiskans \textit{barus ($\beta\alpha\rho\nu\varsigma$)},
+vilket betyder \textit{tung, massiv}.
+
+
+\subsection{1-dimensionella barycentriska koordinater}
+Vi betraktar linjer som ligger i ett plan. Linjerna skulle
+lika gärna kunna ligga i ett rum eller någon rymd av högre dimension,
+men vi antar att de ligger i planet för att få kortare koordinat-tupler
+och enklare intuitiv förståelse.
+
+
+Ett plan har $2$ dimensioner betecknas med $\R^2$ och 
+definieras som alla tupler
+
+\[\R^2 = \{ (x,y) | x \in \R, y \in \R \}\]
+
+Vi inför notation för $3$ punkter:
+\begin{eqnarray*}
+O = (0, 0) \\
+A = (x_1, y_1) \\
+B = (x_2, y_2)
+\end{eqnarray*}
+$O$ är planets origo, $A, B$ är två godtyckliga punkter som kommer att definiera vår linje.
+Vi antar att $A\neq B$.
+
+
+\begin{Definition}\label{def:dim-1-bary-koord}
+De \textbf{1-dimensionella barycentriska koordinaterna relativt $A$, $B$} är tupler 
+$(\alpha, \beta)_{(A, B)}$ med $\alpha, \beta \in \R$, $\alpha + \beta = 1$.
+Detta är en notation som står för punkter $\alpha A + \beta B$.
+\end{Definition}
+
+Varför hamnar alla sådana punkter på en linje? Vi tittar på ett exempel först.
+
+\begin{Exempel}
+    \textsc{Mittpunkten} $M$ mellan $A, B$ har följande koordinater:
+    $x$-koordinaten är medelvärdet för $A$:s och $B$:s $x$-koordinater.
+    $y$-koordinaten är medelvärdet för $A$:s och $B$:s $y$-koordinater.
+    Alltså har vi
+    \begin{eqnarray*}
+    M = \left( \frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2} \right) = \\
+    = \frac{1}{2}((x_1, y_1) + (x_2, y_2)) = \frac{1}{2}(A + B) = \\
+    \frac{1}{2}A + \frac{1}{2}B = \left( \frac{1}{2}, \frac{1}{2}\right)_{(A, B)}
+    \end{eqnarray*}
+    När vi skriver $A + B$ och $A, B$ är \textit{punkter}, menar vi att
+    additionen ska ske komponentvis,
+    $A+B = (x_1, y_1) + (x_2, y_2) = (x_1 + x_2, y_1 + y_2)$.
+
+    Mittpunktens koordinater är alltså $\left( \frac{1}{2}, \frac{1}{2}\right)_{(A, B)}$
+    oberoende på valet av origo. Så kommer fallet oftast att vara för barycentriska koordinater.
+\end{Exempel}
+
+
+\begin{Definition}
+\label{def:linje}
+Vi \emph{definierar} en \textbf{linje} $\ol{AB}$ som alla punkter 
+\[\ol{AB} = \{ A + \lambda (B - A) | \lambda \in \R \} \subseteq \R\]
+Punkterna $A, B$ får (fortfarande) inte vara lika.
+\end{Definition}
+Definitionen av linje stämmer överens med vår vanliga uppfattning som att en linje är något oändligt
+långt i två riktningar och rakt. Vi tänker att en linje är mängden av alla punkter $P$
+där en punkt kan fås genom att börja i punkten $A$, och gå i riktningen mot $B$ eller
+i motsatta riktningen från $B$. Att gå från $A$ till $B$ är samma sak som att addera vektorn $B-A$ till $A$,
+och att gå en del av avståndet (delen kan vara mindre, större eller negativ) är samma sak
+som att inte addera \textit{hela} $B-A$ utan bara en multipel $\lambda(B-A)$.
+
+\begin{Uppgift}
+    Visa att \textbf{Definition \ref{def:linje}} är ekvivalent med den vanliga definitionen
+    av linje: att definiera en linje
+    som \textbf{lösningsmängden av alla $(x, y)$ till en ekvation}
+    \[
+    x\cdot X + y\cdot Y = Z
+    \]
+    för $(X, Y)\neq (0, 0)$.
+
+    D.v.s. visa att en mängd av punkter $L\subseteq \R^2$ är en linje med vår definition om och endast om
+    den är en linje med ovanstående definition.
+\end{Uppgift}
+
+
+
+\subsubsection{Sats: Unik representation och entydighet}
+\begin{theorem}
+\label{thm:dim-1-unik}
+Varje punkt $P \in \overline{AB}$ har en unik 
+barycentrisk koordinat 
+$(\alpha, \beta)_{AB} = P$.
+Varje $(\alpha,\beta)_{AB} = P$ motsvarar en unik punkt $P \in \overline{AB}$.
+\end{theorem}
+\begin{proof}
+    Notera att ``barycentrisk koordinat $(\alpha, \beta)_{AB} = P$'' betyder att $\alpha + \beta = 1$
+    enl. \textbf{Definition \ref{def:dim-1-bary-koord}}.
+
+    Låt $P$ vara en punkt på linjen $\ol{AB}$. Enl. definitionen av linje, \textbf{Definition \ref{def:linje}},
+    har vi $P = A + \lambda(B-A)$ för något $\lambda \in \R$.
+    Vi skriver om det som
+    \begin{eqnarray*}
+    P = A + \lambda(B-A) = \\
+    (1-\lambda)A + \lambda B = (1-\lambda, \lambda)_{(A, B)}
+    \end{eqnarray*}
+
+    Vi har alltså visat att varje $P\in \ol{AB}$ har en motsvarande barycentrisk koordinat med basen $(A, B)$.
+    Antag att $P$ har en annan barycentrisk koordinat $(\alpha, \beta)_{(A, B)}$.
+    Då måste 
+    \begin{eqnarray*}
+    O = P - P = \\
+    (1-\lambda, \lambda)_{(A, B)} - (\alpha, \beta)_{(A, B)} = \\
+    (1-\lambda - \alpha, \lambda - \beta)_{(A, B)} 
+    \end{eqnarray*}
+    Om $(\alpha, \beta) \neq (1-\lambda, \lambda)$, är någon av $1-\lambda - \alpha$ eller
+    $\lambda - \beta$ inte noll. Vi antar att det är $\lambda - \beta$. Hade det varit 
+    $1-\lambda - \alpha$ kunde beviset ändå ha fortsatt ungefär likadant.
+
+    Vi fortsätter:
+    \begin{eqnarray*}
+    (0, 0) = (1-\lambda - \alpha, \lambda - \beta)_{(A, B)} \wedge \lambda \neq \beta \Lra \\
+    (1-\lambda - \alpha) A = (\beta - \lambda) B \Lra \\
+    \frac{(1-\lambda - \alpha)}{(\beta - \lambda)} A = B \Lra\\
+    \frac{(1-\lambda - \alpha)}{(1 - \alpha - \lambda )} A = B \Lra A = B
+    \end{eqnarray*}
+    vilket är en motsägelse. Vi använde oss i den sista förenklingen av att $\beta = 1-\alpha$.
+
+    Nu har vi visat att varje punkt på linjen har en unik barycentrisk koordinat.
+    Antag nu att $P = (\alpha, \beta)_{(A, B)} = (\alpha, 1-\alpha)_{(A, B)}$ är en punkt
+    med barycentrisk koordinat i basen $A, B$. Vi behöver visa att $P\in \ol{AB}$.
+    Vi räknar:
+    \begin{eqnarray*}
+    P = (\alpha, 1-\alpha)_{(A, B)} = \alpha A + (1-\alpha) B = \\
+    A - (1-\alpha) A + (1-\alpha B) = A + (1-\alpha)(B-A) \in \ol{AB}
+    \end{eqnarray*}
+    eftersom $\lambda$ kan antas vara $(1-\alpha)$.
+\end{proof}
+
+
+% Citat: Får vi inte *minus* B här?  Vi *borde* inte få det, vi borde få rätt sak.
+\subsubsection{Uppgift (över pausen mellan $1$:a och $2$:a timmen)}
+\label{sssec:ratio}
+Givet $A,B$ och en punkt $P$ på en linje, samt avstånden från $P$ till $A$ resp $B$, hitta koordinaterna för $P$.
+Antag att $P$ ligger innanför segmentet $\ol{AB}$ och att $|AP| = \mu$, $|PB| = \lambda$.
+\myLine
+\subsubsection*{Lösning}
+Om $|AP| = \mu$ och $|PB| = \lambda$, är hela $|AB| = \mu + \lambda$.
+$\mu$ (avståndet från $A$ till $P$ blir då en $\frac{\mu}{\mu + \lambda}$-del av
+avståndet från $A$ till $B$, och vi har därför att
+\begin{eqnarray*}
+P = A + \frac{\mu}{\mu + \lambda} (B - A) =\\
+\left( \frac{\lambda}{\lambda + \mu}, \frac{\mu}{\lambda + \mu} \right)_{(A, B)} 
+\end{eqnarray*}
+
+\subsection{Sats: Koordinater oberoende av origo}
+\begin{theorem}
+\label{thm:dim-1-oberoende-av-origo}
+    Antag att $P = (\alpha, \beta)_{(A, B)}$.
+    Låt $\Delta = (\delta_1, \delta_2)$.
+    Låt $A' = A-\Delta, B' = B - \Delta$,
+    $P' = P-\delta$.
+    Då är $P' = (\alpha, \beta)_{(A', B')}$
+\end{theorem}
+\begin{proof}
+    Vi har 
+    \begin{eqnarray*}
+    (\alpha, \beta)_{(A', B')} = \\
+    \alpha A' + \beta B' = \alpha(A - \Delta) + \beta (B - \Delta) = \\
+    \alpha A + \beta B - (\alpha + \beta) \Delta = P - \Delta = P
+    \end{eqnarray*}
+\end{proof}
+Detta betyder att om origo flyttas med en vektor $\Delta$, men alla planets punkter vara kvar,
+så kommer deras barycentriska koordinater inte att ändras.
+
+% \begin{eqnarray*}
+% & \text{Låt } & O' = O + \delta = O + (\delta_x, \delta_y) \\
+% && A' = A + \delta \\
+% && B' = B + \delta \\
+% & \text{Låt } & P = (\alpha, \beta)_{AB} \\
+% && P' = P - \delta \\
+% & \text{Då är } & P' = (\alpha, \beta)_{A',B'} 
+% \end{eqnarray*}
+
+\subsection{2-dimensionella barycentriska koordinater}
+
+Vi uppdaterar våra antaganden. Nu behövs $3$ punkter för att bilda en bas.
+Vi lägger till en punkt $C = (x_3, y_3)$. Våra antaganden är nu
+\begin{eqnarray*}
+O = (0, 0) \\
+A = (x_1, y_1) \\
+B = (x_2, y_2) \\
+C = (x_3, y_3)
+\end{eqnarray*}
+Enligt diskussionen i inledningen till \textbf{Sektion \ref{sec:bary-intro}},
+får $A, B, C$ inte ligga i samma sidoklass av ett $2-1$-dimensionellt delrum.
+Det betyder att $A, B, C$ inte får ligga på samma linje.
+
+\begin{Definition}
+De 2-dimensionella barycentriska koordinaterna relativt $A$, $B$, $C$ är tupler $(\alpha, \beta, \gamma)_{(A,B,C)}$ med
+$\alpha, \beta, \gamma \in \R$, $\alpha + \beta + \gamma = 1$, som betecknar punkter $\alpha A + \beta B + \gamma C$.
+\end{Definition}
+
+\subsubsection{Sats: Unik representation och entydighet}
+\begin{theorem}
+Varje punkt $P \in \R^2$ har en unik
+$(\alpha, \beta, \gamma)_{(A,B,C)} = P$. Varje $(\alpha,\beta,\gamma)_{(A,B,C)} = P$ motsvarar en unik punkt $P$.
+\end{theorem}
+\begin{proof}
+
+Hemuppgift. Det bygger på ett lemma.
+
+\smallLine
+
+Om $\alpha A + \beta B + \gamma C = 0$ med $\alpha + \beta + \gamma = 1$, så ligger
+    $A, B, C$ på en linje.
+
+\smallLine
+
+Ha samma struktur som i beviset för {\textbf{Sats \ref{thm:dim-1-unik} }}.
+Antag att en punkt har två olika koordinater. Reducera till lemmat ovan. De resterande stegen 
+är nästan identiska med fallet med linje.
+\end{proof}
+
+%Uppgift: Givet $A,B$ och en punkt $P$ på en linje, samt avstånden från $P$ till $A$ resp $B$, hitta koordinaterna för $P$.
+
+
+\subsubsection{Sats: Oberoende av origo}
+Hemuppgift: Jämför med \textbf{Sats \ref{thm:dim-1-oberoende-av-origo}}.
+Formulera och bevisa ett analogt påstående för $2$-dimensionella barycentriska koordinater.
+
+\subsubsection{Användning: Medianernas skärningspunkt}
+Medianerna (linjesegment som går från hörn till mittpunkter av motstående sida)
+i en triangel skärs alla tre i samma punkt som delar varje median i förhållandet $1:2$. Vi visar det med
+hjälp av barycentriska koordinater.
+
+Låt $ABC$ vara en triangel. Låt basen för våra barycentriska koordinater vara $(A, B, C)$.
+Då har vi $A = (1, 0, 0)_{(A,B,C)}$ o.s.v. 
+Inför notation $A' = \text{mittpunkten av } BC$, analogt för $B', C'$.
+Då vet vi att $A' = \baryabc{0} {\frac{1}{2}} {\frac{1}{2}}, 
+    B' = \baryabc{\frac{1}{2}} {0} {\frac{1}{2}},
+    C' = \baryabc{\frac{1}{2}} {\frac{1}{2}} {0}$.
+Linjen $\ol{AA'}$ är
+\begin{eqnarray*}
+    AA' = \{A - \lambda (A'-A)\} = \\
+    \left\{ 
+    \baryabc{1}{0}{0} + \lambda \baryabc{1} {-\frac{1}{2}} {-\frac{1}{2}}
+    \right\} = \\
+    \left\{ 
+    \baryabc{1 + \lambda } {-\frac{\lambda}{2} } {-\frac{\lambda}{2}}
+    \right\}
+\end{eqnarray*}
+
+Linjen kan karakteriseras som \textit{alla punkter $\baryabc{\alpha}{\beta}{\beta}$}
+eftersom $-\frac{\lambda}{2}$ kan anta godtyckliga värden (och användande av barycentrisk
+notation innebär att $\alpha + \beta + \beta = 1$)
+
+På samma sätt är $\ol{BB'}$ alla punkter av typen $\baryabc{\alpha'}{\beta'}{\alpha'}$.
+Punkten $\{G\} = \ol{AA'} \cap \ol{BB'}$ där $\ol{AA'}$ skär $\ol{BB'}$ måste ha 
+$\alpha = \alpha', \beta = \beta' = \alpha'$.
+Den enda punkt som uppfyller det är $G= \baryabc{\frac{1}{3}} {\frac{1}{3}} {\frac{1}{3}}$.
+Hade vi börjat med $\ol{AA'}$ och $\ol{CC'}$, hade skärningspunkten blivit
+densamma (det är helt symmetriskt och hade fått exakt samma ekvationssystem),
+alltså måste alla tre medianer passera $G$.
+
+För att beräkna förhållandet i vilket $G$ delar $AA'$ gör vi om resonemanget i
+\ref{sssec:ratio} baklänges.
+Om $G$ delar $AA'$ i förhållandet $AG : GA' = \alpha : \beta$, måste
+$G = \frac{\beta}{\alpha+\beta} A + \frac{\alpha}{\alpha + \beta}A'$.
+Vi kan koordinaterna för $G, A, A'$. De enda okända storheterna är $\alpha, \beta$.
+Löser man ekvationssystemet som uppstår, får man $\alpha : \beta = 2 : 1$.
+
+\subsubsection{Cevas sats}
+$ABC$ är en triangel och $(A,B,C)$ är basen för ett barycentriskt koordinatsystem.
+Givet en punkt $P=\baryabc{\alpha}{\beta}{\gamma}$
+i triangeln, bestäm var punkten från $A$ genom $P$ skär motstående sida, 
+d.v.s. skärningspunkt $\{A'\} = AP \cap BC$.
+
+Bevis (finns bild): kalla den sökta punkten $Q = (O, \alpha, 1-\alpha)_{ABC}$. Då får vi linjen 
+\begin{eqnarray*}
+\overline{AP} = \{\lambda \baryabc{1}{0}{0} + (1 - \lambda)(\alpha, \beta, \gamma) | \lambda \in \R\}  = \\
+\{
+    \baryabc{\lambda + (1-\lambda)\alpha} {(\lambda-1)\beta} {(\lambda-1)\gamma} | \lambda \in \R
+\}
+\end{eqnarray*}
+På samma sätt som medianen från $A$ blev alla punkter $\baryabc{\alpha}{\beta}{\beta}$
+där förhållandet mellan de sista två koordinaterna är $1$, blir 
+$\ol{AP}$ alla punkter där förhållandet mellan $B$- och $C$-koordinaterna är
+$\frac{(\lambda-1)\beta} {(\lambda-1)\gamma} = \frac{\beta}{\gamma}$.
+Alltså har skärningspunkten $A'$ koordinaterna 
+$\baryabc{0}{\zeta}{1 - \zeta}$ (eftersom den ligger på $BC$) och samtidigt
+$\baryabc{\delta} {\epsilon\beta} {\epsilon\gamma}$.
+%Löser vi ekvationssystemet som uppstår får $A'$ koordinaterna \ldots
+\todo{Slutför}
+
+
+
+
+% Resten av beviset är rätt långt. Se foton.
+
+% Satsen lyder...
+% $A,B,C$ ligger ej på linje. Tag 
+% \begin{eqnarray*}
+% A' \in \overline{BC} \\
+% B' \in \overline{AC} \\
+% C' \in \overline{AB}
+% \end{eqnarray*}
+% Då gäller att linjerna skärs i en punkt $P$ omm
+% \[ \frac{AB'}{B'C} \frac{CA'}{A'B} \frac{BC'}{C'A} = 1 \]
+
+
+\subsection{Hemuppgifter}
+
+\begin{enumerate}
+
+\item 
+    Visa att \textbf{Definition \ref{def:linje}} är ekvivalent med den vanliga definitionen
+    av linje: att definiera en linje
+    som \textbf{lösningsmängden av alla $(x, y)$ till en ekvation}
+    \[
+    x\cdot X + y\cdot Y = Z
+    \]
+    för $(X, Y)\neq (0, 0)$.
+
+    D.v.s. visa att en mängd av punkter $L\subseteq \R^2$ är en linje med vår definition om och endast om
+    den är en linje med ovanstående definition.
+
+\item\textbf{Egenskaper hos barycentriska koordinater}.
+    Sidorna av en (icke-degenererad) triangel $ABC$ delar in planet i $7$ delar.
+    I insidan av triangeln har varje punkt $3$ positiva koordinater ($(+,+,+)$). På
+    linjen $BC$ mellan $B$ och $C$ är koordinaterna $(0, +, +)$. För varje återstående område: beskriv tecknen på koordinaterna. Varje koordinat är $\in \{+,-,0\}$.
+
+\item \textbf{Unika koordinater}.
+$A,B,C$ är tre olika punkter som inte ligger på samma linje (ej kolinjära).
+Visa att de barycentriska koordinaterna relativt $A,B,C$ är unika: varje koordinat
+motsvarar en unik punkt, och varje punkt har en unik koordinat.
+{\tiny{
+        Bevisa det här först: Om $\alpha A + \beta B + \gamma C = 0$ med $\alpha + \beta + \gamma = 1$, så ligger
+        $A, B, C$ på en linje. } }
+
+\item \textbf{Oberoende av origo}. Visa att de barycentriska koordinaterna 
+    baserade på en triangel $A,B,C$ i $2$ dimensioner är oberoende av valet på origo.
+    (Analogt med det $1$-dimensionella fallet).
+
+        
+
+\item \textbf{Linjer genom samma punkt}. 
+    I en triangel $ABC$ med är punkterna $D \in BC$, $E \in AC$, $F \in AB$ sådana att
+    $AD, BE, CF$ skär varandra i en punkt $P$. Låt $D'$ vara speglingen av $D$ i mittpunkten av $BC$,
+    $E'$ - speglingen av $E$ i mittpunkten av $AC$ och analogt för $F'$. Visa att 
+    de tre nya linjerna $AE', BE', CF'$ skär varandra i en punkt $P'$. Hitta de barycentriska 
+    koordinaterna för $P'$ om $P = (n, m, l)$.
+    
+
+\item \textbf{Trigonometriska Ceva}. I en triangel $ABC$ ligger punkterna
+    $D$ på $BC$, $E$ på $AC$, $F$ på $AB$. Visa att $AD, BE, CF$ skär varandra
+    i samma punkt om och endast om 
+    \[
+    \frac{\sin \angle BAD \sin \angle ACF \sin \angle CBE}
+         {\sin \angle DAC \sin \angle FCB \sin \angle EBA}
+    \]
+    %\textit{Hint: Sök på \textit{Ceva's theorem}}
+
+\item \textbf{Linjer genom samma punkt}. 
+    I en triangel $ABC$ med är punkterna $D \in BC$, $E \in AC$, $F \in AB$ sådana att
+    $AD, BE, CF$ skär varandra i en punkt $P$. Låt $AA', BB', CC'$ vara bisektriserna 
+    dragna ur $A, B, C$. Låt linjen $a$ vara speglingen av $AD$ i linjen $AA'$, $b$ och $c$ analogt.
+    Visa att de tre linjerna $a,b,c$ skär varandra i en punkt. \textit{(Svårt)} Vad är koordinaterna av den
+    punkten uttryckt i $P$? 
+
+    {\tiny{Om du kör fast - sök på \textit{isogonal conjugate}}}.
+
+\item Härled koordinaterna för ditt favorit-triangelcentrum. Om du inte har något: 
+    gå in på \textsc{Encyclopedia of Triangle Centers} \url{http://faculty.evansville.edu/ck6/encyclopedia/ETC.html}
+    och skaffa en! Bonuspoäng om du behöver använda ett datoralgebra-system och koordinaterna inte får
+    plats på pappret.
+        
+        Min favorit är \textit{Fermat-Torricelli}-punkten vars koordinater är 
+        \begin{eqnarray*}
+        \left(-\frac{a^4+a^2 \left(b^2+c^2+4 \sqrt{3} S\right)-2 \left(b^2-c^2\right)^2}{3 a^4-2 a^2 \left(3 b^2+3 c^2+2 \sqrt{3} S\right)+3 b^4-2 b^2 \left(3 c^2+2 \sqrt{3} S\right)+3 c^4-4 \sqrt{3} c^2 S},\right.\\
+        -\frac{-2 a^4+a^2 \left(b^2+4 c^2\right)+b^4+b^2 \left(c^2+4 \sqrt{3} S\right)-2 c^4}{3 a^4-2 a^2 \left(3 b^2+3 c^2+2 \sqrt{3} S\right)+3 b^4-2 b^2 \left(3 c^2+2 \sqrt{3} S\right)+3 c^4-4 \sqrt{3} c^2 S},\\
+        \left.-\frac{-2 a^4+a^2 \left(4 b^2+c^2\right)-2 b^4+b^2 c^2+c^4+4 \sqrt{3} c^2 S}{3 a^4-2 a^2 \left(3 b^2+3 c^2+2 \sqrt{3} S\right)+3 b^4-2 b^2 \left(3 c^2+2 \sqrt{3} S\right)+3 c^4-4 \sqrt{3} c^2 S}\right)
+        \end{eqnarray*}
+
+\end{enumerate}
+
